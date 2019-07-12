@@ -18,7 +18,22 @@
 
 int main(void){
 
+    float loan, interest, monthly_payment, monthly_interest;
+    int num_monthly_payment;
+    
+    printf("Enter amount of loan: "); scanf("%f", &loan);
+    printf("Enter interest rate: "); scanf("%f", &interest);
+    printf("Enter number of monthly payments: "); scanf("%d", &num_monthly_payment);
+    
+    monthly_interest = interest / (100*12);
 
+    for(int i = 1; i <= num_monthly_payment; i++)
+    {
+        printf("Enter monthly payment #%d: ", i); scanf("%f", &monthly_payment);
+
+        loan = loan * (1+monthly_interest) - monthly_payment;
+        printf("Balance remaining after payment #%d: %.2f\n\n", i, loan);
+    }
 
     return 0;
 }
