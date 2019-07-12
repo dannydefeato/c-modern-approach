@@ -29,7 +29,7 @@ int main(void){
 
     for(int i = 1; i <= num_monthly_payment; i++)
     {
-        printf("Enter monthly payment #%d: ", i); scanf("%f", &monthly_payment);
+        printf("Enter monthly payment #%d/%d: ", i, num_monthly_payment); scanf("%f", &monthly_payment);
 
         loan = loan * (1+monthly_interest) - monthly_payment;
         printf("Balance remaining after payment #%d: %.2f\n\n", i, loan);
