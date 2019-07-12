@@ -19,7 +19,19 @@
 
 int main(void){
 
- 
+    int n;
+    float f = 1.00f, e = 1.00f;
+
+    printf("Approximation of e using e = 1/n1!+ 1/n2! + ... + 1/n!\n");
+    printf("Number of iterations: "); scanf("%d", &n);
+
+    for(int i = 1; i <= n; i++)
+    {
+        f *= i;
+        e += 1/f;
+    }
+
+    printf("\nThe approximation of e (using %d steps) is: %.12f", n, e);
 
     return 0;
 }
