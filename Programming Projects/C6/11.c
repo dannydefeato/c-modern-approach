@@ -27,8 +27,7 @@ int main(void){
 
     for(int i = 1; i <= n; i++)
     {
-        f *= i;
-        e += 1/f;
+        e += 1/(f *= i);
     }
 
     printf("\nThe approximation of e (using %d steps) is: %.12f", n, e);
