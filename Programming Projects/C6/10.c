@@ -23,7 +23,46 @@
 
 int main(void){
 
- 
+    int m, d, y;
+    int mTemp = 99, dTemp = 99, yTemp = 99999;
+
+    while(1)
+    {
+        printf("Enter date (mm/dd/yy): "); scanf("%d /%d /%d", &m, &d, &y); 
+
+        // Terminats with 0/0/0
+        if(m == 0 && d == 0 && y == 0)
+            break;
+
+        // Checks the year
+        if(y < yTemp)
+        {
+            yTemp = y;
+            mTemp = m;
+            dTemp = d;
+        }
+
+        // Checks the month
+        else if(y == yTemp && m < mTemp)
+        {
+            yTemp = y;
+            mTemp = m;
+            dTemp = d;
+        }
+
+        // Checks the day
+        else if(y == yTemp && m == mTemp && d < dTemp)
+        {
+            yTemp = y;
+            mTemp = m;
+            dTemp = d;
+        }
+     }
+
+    // only displays the result if at least one date has been set
+    if(yTemp != 99999)
+        printf("%d/%d/%d is the earliest date", mTemp, dTemp, yTemp);
+
 
     return 0;
 }
