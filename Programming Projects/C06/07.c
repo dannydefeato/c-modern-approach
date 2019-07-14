@@ -1,46 +1,34 @@
+//  C Programming - A Modern Approach (Second Edition)
+//  by K. N. King
+//  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//  Chapter 6   Loops
+//              PROGRAMMING PROJECTS
+//              PROJECT No. 7 | p.123
+
+
+/* 
+    Rearrange the square3.c program so that the for loop initializes i, tests i, and incre-
+    ments i. Don't rewrite the program; in particular, don't use any multiplications.
+*/
+
+/* Prints a table of squares using an odd method */
+
 #include <stdio.h>
 
 int main(void)
 {
-int a, b, c, d, min1, min2, max1, max2, max, min;
+    int i, n, odd, square;
 
-    printf("Enter four integers: ");
-    scanf("%d %d %d %d", &a, &b, &c, &d);
+    printf("This program prints a table of squares.\n");
+    printf("Enter number of entries in table: ");
+    scanf("%d", &n);
 
-    if (a < b){
-        min1 = a; 
-        max1 = b;
+    
+    odd = 3;
+    for(i = 1, square = 1; i <= n; odd += 2, i++) {
+        printf("%10d%10d\n", i, square);
+        square += odd;
     }
-    else {
-        min1 = b;
-        max1 = a;
-    }
-
-    if (c < d){
-        min2 = c;
-        max2 = d;
-    }
-    else {
-        min2 = d;
-        max2 = c;
-    }
-
-    if (min1 < min2){
-        min = min1;
-    }
-    else {
-        min = min2;
-    }
-
-    if (max1 < max2){
-        max = max2;
-    }
-    else {
-        max = max2;
-    }
-
-    printf("Largest: %d\nSmallest: %d", max, min);
-
 
     return 0;
 }

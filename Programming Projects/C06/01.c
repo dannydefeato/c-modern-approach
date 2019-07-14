@@ -1,33 +1,16 @@
 #include <stdio.h>
 
-int main(void)
-{
+int main(void){
 
-    int num, digits;
-
-    printf("Enter a number (0-9999): ");
-    scanf("%d", &num);
-
-    if (num >= 0 && num <=9) {
-        digits = 1;
-    }
+    float userInput, compare;
     
-    else if (num > 9 && num <= 99) {
-        digits = 2;
-    }
+    while (userInput != 0){
 
-    else if (num > 99 && num <= 999) {
-        digits = 3;
-    }
-    else if (num > 999 && num <= 9999) {
-        digits = 4;
-    }
+        printf("Enter a number (0 to exit): "); scanf("%f", &userInput);
 
-    else {
-        printf("Invalid input."); return 0;
+        if(userInput > compare) 
+            compare = userInput;
     }
-
-    printf("The number %d has %d digits.", num, digits);
-
+    printf("The largest number entered was: %.2f", compare);
     return 0;
 }

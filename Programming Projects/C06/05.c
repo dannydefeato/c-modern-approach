@@ -1,27 +1,33 @@
+//  C Programming - A Modern Approach (Second Edition)
+//  by K. N. King
+//  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//  Chapter 6   Loops
+//              PROGRAMMING PROJECTS
+//              PROJECT No. 5 | p.123
+
+
+/* 
+    Programming Project 1 in Chapter 4 asked you to write a program that displays a two-digit
+    number with its digits reversed. Generalize the program so that the number can have one,
+    two, three or more digits.
+
+    Hint: Use a do loop that repeatedly divides the number by 10, stopping when it reaches 0.
+*/
+
 #include <stdio.h>
 
 int main(void)
 {
-    float income, tax;
 
-    printf("Enter your income: ");
-    scanf("%f", &income);
+    int num;
 
-    if (income < 750.00f)
-        tax = income * 0.01f;
-    else if( income < 2250.00f)
-        tax = 7.50f + 0.02f * (income - 750.00f);
-    else if (income < 3750.00f)
-        tax = 37.50f + 0.03f * (income - 2250.00f);
-    else if (income < 5250.00f)
-        tax = 82.50f + 0.04f * (income - 3750.00f);
-    else if (income < 7000)
-        tax = 142.50f + 0.05f * (income - 5250.00f);
-    else
-        tax = 230.00f + 0.06f * (income - 7000.00f);
+    printf("Enter an integer: "); scanf("%d", &num);
+    printf("The reversal is: ");
 
-
-    printf("Tax: %.2f", tax);
-
+    do{
+        printf("%d", num % 10);
+        num /= 10;
+    }while(num != 0);
+ 
     return 0;
 }

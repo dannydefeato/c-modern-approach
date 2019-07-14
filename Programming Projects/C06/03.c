@@ -1,52 +1,41 @@
-// Calculates a broker's commission
+//  C Programming - A Modern Approach (Second Edition)
+//  by K. N. King
+//  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//  Chapter 6   Loops
+//              PROGRAMMING PROJECTS
+//              PROJECT No. 3 | p.123
+
+
+/* 
+    Write a program that asks the user to enter a fraction, then reduces the fraction to lowest terms:
+
+    ENTER A FRACTION: 6/12
+    IN LOWEST TERMS: 1/2
+
+        Hint: To reduce a fraction to lowest terms, first compute the GCD of the numerator and denominator.
+        Then divide bothe the numerator and denominator by the GCD.
+
+    See project No. 2
+*/
 
 #include <stdio.h>
 
-/*#define BOOL unsigned int
-#define TRUE 1
-#define FALSE 0 */
+int main(void){
 
-int main(void)
-{
-   /*BOOL flag = FALSE;
+    int num, denom, numInput, denomInput, remainder;
 
-    if(flag)
-        printf("TRUE");
-    else if (!flag)
-        printf("FALSE"); */
+    printf("Enter a fraction: "); scanf("%d /%d", &num, &denom);
 
-    float PriceShare, commission, value;
-    int NumShares;
-   
-    printf("Enter number of shares: ");
-    scanf("%d", &NumShares);
-    printf("Enter price per share: ");
-    scanf("%f", &PriceShare);
+    numInput = num;
+    denomInput = denom;
 
-    value = NumShares * PriceShare;
+    while (denom != 0){
+        remainder = num % denom;
+        num = denom;
+        denom = remainder;
+    }
 
-    if (value < 2500.00f)
-        commission = 30.00f + .017f * value;
-    else if (value < 6250.00f)
-        commission = 56.00f + .0066f * value;
-    else if (value < 20000.00f)
-        commission = 76.00f + .0034f * value;
-    else if (value < 50000.00f)
-        commission = 100.00f + .0022f * value;
-    else if (value < 500000.00f)
-        commission = 155.00f + .0011f * value;
-    else
-        commission = 255.00f + .0009f * value;
-
-    if (commission < 39.00f)
-        commission = 39.00f;
-
-    printf("\nCommission: $%.2f", commission);
-    
-    if (NumShares < 2000)
-        printf("\nRival commission: $%.2f", NumShares * .03f + 33.00f);
-    else
-        printf("\nRival commission: $%.2f", NumShares * .02f + 33.00f);
+    printf("In lowest terms: %d/%d", numInput / num, denomInput / num);
 
 
 

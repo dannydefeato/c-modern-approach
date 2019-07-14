@@ -1,18 +1,17 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void){
 
-    int hours, minutes;
+    int m, n, r;
 
-    printf("Enter a 24-hour time: ");
-    scanf("%d:%d", &hours, &minutes);
+    printf("Enter two integers: "); scanf("%d %d", &m, &n);
 
-    if (hours < 11) 
-        printf("Equivalent 12-hour time: %d:%d AM", hours == 0 ? 12 : hours, minutes);
-        
-    
-    else 
-        printf("Equivalent 12-hour time: %d:%d PM", hours == 12 ? 12 : hours - 12, minutes );   // if "hours == 12" then "hours = 12" "else hours = hours - 12"
+    while (n != 0){
+        r = m % n;
+        m = n;
+        n = r;
+    }
 
+    printf("Greatest Common Divisor: %d", m);
     return 0;
 }
