@@ -27,12 +27,13 @@ int main(void){
     {
         if(t >= eps)
         {
-        t = 1/(f *= i);
-        e += t;
-        printf("Term %3d:\t%f\n", i, t);
+            t = 1/(f *= i);
+            e += t;
+            printf("Term %3d:\t%f\n", i, t);
         }
+        
         else if( t < eps)
-        break;
+            break;
     }
 
     printf("\nThe approximation of e (epsilon = %.4f) is: %.12f", eps, e);
