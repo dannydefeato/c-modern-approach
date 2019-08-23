@@ -22,17 +22,34 @@
 
 int main(void)
 {
-    int i, n;
+    int          i;
+    short       si;
 
-    printf("This program prints a table of squares.\n");
-    printf("Enter number of entries in table: ");
-    scanf("%d", &n);
-
-    i = 1;
-    while (i <= n) {
-        printf("%10d%10d\n", i, i * i);
+    i = 46340;
+    printf("\nInt:\n");
+    while (i <= 46341) {
+        printf("i: %8d\ti*i:%15d\n", i, i * i);
         i++;
+    }
+
+    printf("\nShort:\n");
+    si = 181;
+    while (si <= 182) {
+        printf("si: %7hi\ti*i:%15hi\n", si, si * si);
+        si++;
     }
 
 return 0;
 }
+
+/*
+
+The last correct numbers are: 
+int:          46340 ->  2,147,395,600
+              46341 -> -2,147,479,015
+
+short:          181 ->         32,761
+                182 ->        -32,412
+
+
+*/
